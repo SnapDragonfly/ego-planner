@@ -2,11 +2,13 @@ PROJECT(local_sensing_node)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8.3)
 SET(CMAKE_BUILD_TYPE Release) # Release, RelWithDebInfo
 #SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(cv_bridge_DIR /usr/local/share/cv_bridge/cmake)
+
 ADD_COMPILE_OPTIONS(-std=c++11 )
 ADD_COMPILE_OPTIONS(-std=c++14 )
 
-set(ENABLE_CUDA false)
-#set(ENABLE_CUDA true)
+#set(ENABLE_CUDA false)
+set(ENABLE_CUDA true)
 
 if(ENABLE_CUDA)
   find_package(CUDA REQUIRED)
@@ -20,7 +22,8 @@ if(ENABLE_CUDA)
 #       -gencode arch=compute_52,code=sm_52; 
 #       -gencode arch=compute_60,code=sm_60;
 #       -gencode arch=compute_61,code=sm_61;
-      -gencode arch=compute_75,code=sm_75;
+#       -gencode arch=compute_75,code=sm_75;
+        -gencode arch=compute_87,code=sm_87;
   ) 
 
   SET(CUDA_PROPAGATE_HOST_FLAGS OFF)

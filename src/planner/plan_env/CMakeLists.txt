@@ -5,6 +5,7 @@ set(CMAKE_BUILD_TYPE "Release")
 ADD_COMPILE_OPTIONS(-std=c++11 )
 ADD_COMPILE_OPTIONS(-std=c++14 )
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wall -g")
+set(cv_bridge_DIR /usr/local/share/cv_bridge/cmake)
 
 find_package(OpenCV REQUIRED)
 
@@ -46,4 +47,5 @@ add_library( plan_env
 target_link_libraries( plan_env
     ${catkin_LIBRARIES} 
     ${PCL_LIBRARIES}
+    ${OpenCV_LIBS}
     )  
