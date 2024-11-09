@@ -55,6 +55,7 @@ find_package(catkin REQUIRED COMPONENTS
   visualization_msgs
   tf
   std_srvs
+  std_msgs
   laser_geometry
   pose_utils
   quadrotor_msgs
